@@ -5,7 +5,7 @@
 
  
  <spring:url var="css" value="/resourses/css"/> 
- <spring:url var="js" value="/resourses/js"/>   
+ <spring:url var="js" value="/resourses/js"/> 
  <spring:url var="images" value="/resourses/images"/>   
    
 <c:set var="conextRoot" value="${pageContext.request.contextPath}"/>
