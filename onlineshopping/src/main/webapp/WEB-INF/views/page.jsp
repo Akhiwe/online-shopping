@@ -1,63 +1,100 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<%@taglib prefix="c" uri="http://www.springframework.org/tags" %> 
-<%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+	pageEncoding="ISO-8859-1"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
- 
- <spring:url var="css" value="/resourses/css"/> 
- <spring:url var="js" value="/resourses/js"/> 
- <spring:url var="images" value="/resourses/images"/>   
- 
- 
+
+<spring:url var="css" value="/resourses/css" />
+<spring:url var="js" value="/resourses/js" />
+<spring:url var="images" value="/resourses/images" />
+
+<c:set var="contextRoot" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
 
-  <title>Online Shopping - ${tittle}</title>
+<title>Online Shopping - ${tittle}</title>
 
-  <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/${css}/bootstrap.min.css" rel="stylesheet">
+<script>
+	window.menu = '${tittle}';
 
-  <!-- Custom styles for this template -->
-  <link href="${css}/myapp.css" rel="stylesheet">
+	window.contextRoot = '${contextRoot}'
+</script>
+<!-- Bootstrap core CSS -->
+<link href="vendor/bootstrap/${css}/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootsrap pulse theme -->
+<link href="vendor/bootstrap/${css}/bootstrap.pulse.css" rel="stylesheet">
+
+
+<!-- Custom styles for this template -->
+<link href="${css}/myapp.css" rel="stylesheet">
+
 
 </head>
 
 <body>
 
-  <!-- Navigation -->
-  <%@include file="./shared/navbar.jsp" %>
-  
-  <!-- page Content -->
-  <!-- Loading the home content -->
+	<div class="wrapper">
 
-  <%@include file="home.jsp" %> 
+		<!-- Navigation -->
+		<%@include file="./shared/navbar.jsp"%>
 
-  
+		<!-- page Content -->
+		<div class="content">
 
-  
-  <!-- Footer comes here  -->
- <%@include file="./shared/footer.jsp" %>
- 
-  
- 
-  
+			<!-- Loading the home content -->
+			<c:if test="${userClickHome == true }">
+				<%@include file="home.jsp"%>
+			</c:if>
 
-  <!-- Page Content -->
- 
+			<!-- Load only when user clicks about -->
+			<c:if test="${userClickAbout == true }">
+				<%@include file="about.jsp"%>
+			</c:if>
 
- 
- 
+			<!-- Load only when user clicks contact -->
+			<c:if test="${userClickContact == true }">
+				<%@include file="contact.jsp"%>
+			</c:if>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/${js}/bootstrap.bundle.min.js"></script>
+
+		</div>
+		<!-- Loading the home content -->
+
+		<%@include file="home.jsp"%>
+
+
+
+
+		<!-- Footer comes here  -->
+		<%@include file="./shared/footer.jsp"%>
+
+
+
+
+
+		<!-- Page Content -->
+
+
+
+
+
+		<!-- Bootstrap core JavaScript -->
+		<script src="vendor/jquery/jquery.min.js"></script>
+		<script src="vendor/bootstrap/${js}/bootstrap.bundle.min.js"></script>
+
+		<!--  Self coded javascript -->
+		<script src="vendor/bootstrap/${js}/myApp.js"></script>
+
+	</div>
 
 </body>
 
