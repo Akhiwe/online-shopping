@@ -30,8 +30,8 @@
 <!-- Bootstrap core CSS -->
 <link href="vendor/bootstrap/${css}/bootstrap.min.css" rel="stylesheet">
 
-<!-- Bootsrap pulse theme -->
-<link href="vendor/bootstrap/${css}/bootstrap.pulse.css" rel="stylesheet">
+<!-- Bootsrap readable theme -->
+<link href="vendor/bootstrap/${css}/bootstrap-readable-theme.css" rel="stylesheet">
 
 
 <!-- Custom styles for this template -->
@@ -65,6 +65,11 @@
 				<%@include file="contact.jsp"%>
 			</c:if>
 
+			
+			<!-- Load only when user clicks contact -->
+			<c:if test="${userClickAllProducts == true or userClickCategoryProducts == true }">
+				<%@include file="listProducts.jsp"%>
+			</c:if>
 
 		</div>
 		<!-- Loading the home content -->
