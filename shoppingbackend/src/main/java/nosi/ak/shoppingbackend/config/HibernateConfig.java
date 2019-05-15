@@ -9,6 +9,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
@@ -18,7 +19,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 public class HibernateConfig {
 
 	// Change the below based on DBMS choose
-	private final static String DATABASE_URL = "jdbc:h2:./test";
+	private final static String DATABASE_URL = " jdbc:h2:tcp://localhost/~/test";
 	private final static String DATABASE_DRIVER = "org.h2.Driver";
 	private final static String DATABASE_DIALECT = "org.hibernate.dialect.H2Dialect";
 	private final static String DATABASE_USERNAME = "sa";
@@ -35,7 +36,7 @@ public class HibernateConfig {
 		dataSource.setUrl(DATABASE_URL);
 		dataSource.setUsername(DATABASE_USERNAME);
 		dataSource.setPassword(DATABASE_PASSWORD);
-		
+		;
 		
 		return dataSource;
 	
@@ -49,6 +50,7 @@ public class HibernateConfig {
 		LocalSessionFactoryBuilder builder = new LocalSessionFactoryBuilder(dataSource);
 		
 		builder.addProperties(getHibernateProperties());
+		builder.scanPackages("nosi.ak.kzn.shoppingbackend.dto");
 		
 		return builder.buildSessionFactory();
 	
@@ -63,8 +65,22 @@ public class HibernateConfig {
 		
 		Properties properties = new Properties();
 		
+		properties.put("hibernate.dialect", DATABASE_DIALECT);
+		properties.put("hibernate.show_sql", "true");
+		properties.put("hibernate.format_sql", "true");
 	
 		
 		return properties;
 	}
+	
+	// transactionManager bean
+	@Bean
+	public HibernateTransactionManager getTransactionManager(SessionFactory sessionFactory) {
+		HibernateTransactionManager transactionManager = new HibernateTransactionManager(sessionFactory);
+		return transactionManager;
+	
+	}
 }
+	
+	
+	
