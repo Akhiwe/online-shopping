@@ -4,7 +4,7 @@ import java.util.List;
 
 import nosi.ak.shoppingbackend.dto.Cart;
 import nosi.ak.shoppingbackend.dto.CartLine;
-import nosi.ak.shoppingbackend.dto.OrderDetail;
+import nosi.ak.shoppingbackend.dto.OrderDetails;
 
 
 
@@ -26,7 +26,7 @@ public interface CartLineDAO {
 	public List<CartLine> listAvailable(int cartId);
 	
 	// adding order details
-	boolean addOrderDetail(OrderDetail orderDetail);
+	boolean addOrderDetail(OrderDetails orderDetail);
 
 	
 }

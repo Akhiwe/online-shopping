@@ -97,6 +97,14 @@
 			<version>${hibernate.version}</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>2.9.9</version>
+		</dependency>
+
+
 		<!-- Database Connection Pooling -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>

@@ -13,7 +13,7 @@ import nosi.ak.shoppingbackend.dto.Product;
 
 @Repository("productDAO")
 @Transactional
-public class ProductDAOImpl implements ProductDAO {
+public abstract class ProductDAOImpl implements ProductDAO {
 
 	@Autowired
 	private SessionFactory sessionFactory;

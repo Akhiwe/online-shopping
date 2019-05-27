@@ -10,11 +10,11 @@ import org.springframework.transaction.annotation.Transactional;
 import nosi.ak.shoppingbackend.dao.CartLineDAO;
 import nosi.ak.shoppingbackend.dto.Cart;
 import nosi.ak.shoppingbackend.dto.CartLine;
-import nosi.ak.shoppingbackend.dto.OrderDetail;
+import nosi.ak.shoppingbackend.dto.OrderDetails;
 
 @Repository("cartLineDAO")
 @Transactional
-public class CartLineDAOImpl implements CartLineDAO {
+public abstract class CartLineDAOImpl implements CartLineDAO {
 
 	@Autowired
 	private SessionFactory sessionFactory;
@@ -107,7 +107,7 @@ public class CartLineDAOImpl implements CartLineDAO {
 	}
 
 	@Override
-	public boolean addOrderDetail(OrderDetail orderDetail) {
+	public boolean addOrderDetail(OrderDetails orderDetail) {
 		try {			
 			sessionFactory.getCurrentSession().persist(orderDetail);			
 			return true;

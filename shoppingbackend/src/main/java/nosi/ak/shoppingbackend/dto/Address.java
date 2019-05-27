@@ -1,4 +1,4 @@
-package net.kzn.shoppingbackend.dto;
+package nosi.ak.shoppingbackend.dto;
 
 import java.io.Serializable;
 
