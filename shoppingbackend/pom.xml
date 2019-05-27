@@ -19,15 +19,15 @@
 	</properties>
 
 	<dependencies>
-	<!-- JUNIT VERSION 4.12 -->
+		<!-- JUNIT VERSION 4.12 -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
-		
-		 <!-- JSTL -->
+
+		<!-- JSTL -->
 
 		<dependency>
 			<groupId>jstl</groupId>
@@ -53,41 +53,57 @@
 			<artifactId>spring-context</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-		
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-		
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>1.2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<version>1.7.24</version>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-orm</artifactId>
 			<version>${spring.version}</version>
-		</dependency>		
+		</dependency>
 
 		<!-- H2 Database -->
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
-			<version>1.4.196</version>
+			<version>1.4.199</version>
+			<scope>test</scope>
 		</dependency>
-		
-		<!-- Hibernate Dependency -->	
-			
+
+		<!-- Hibernate Dependency -->
+
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
 			<version>${hibernate.version}</version>
 		</dependency>
-		
+
 		<!-- Database Connection Pooling -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-dbcp2</artifactId>
-			<version>2.1.1</version>				
+			<version>2.1.1</version>
 		</dependency>
-		
+
 	</dependencies>
 
 	<build>

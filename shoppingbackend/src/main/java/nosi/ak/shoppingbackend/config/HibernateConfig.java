@@ -19,15 +19,15 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 public class HibernateConfig {
 
 	// Change the below based on DBMS choose
-	private final static String DATABASE_URL = " jdbc:h2:tcp://localhost/~/test";
+	private final static String DATABASE_URL = "jdbc:h2:tcp://localhost/~/test";
 	private final static String DATABASE_DRIVER = "org.h2.Driver";
 	private final static String DATABASE_DIALECT = "org.hibernate.dialect.H2Dialect";
 	private final static String DATABASE_USERNAME = "sa";
-	private final static String DATABASE_PASSWORD = "12345";
+	private final static String DATABASE_PASSWORD = "";
 	
 	// dataSource bean will be available
 	@Bean
-	private DataSource getDataSource() {
+	public DataSource getDataSource() {
 		
 		BasicDataSource dataSource = new BasicDataSource();
 		
@@ -36,7 +36,7 @@ public class HibernateConfig {
 		dataSource.setUrl(DATABASE_URL);
 		dataSource.setUsername(DATABASE_USERNAME);
 		dataSource.setPassword(DATABASE_PASSWORD);
-		;
+		
 		
 		return dataSource;
 	

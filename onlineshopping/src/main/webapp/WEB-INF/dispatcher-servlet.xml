@@ -13,7 +13,7 @@
 	">
 	
 	<context:component-scan base-package="nosi.ak.onlineshopping.controller"/>
-	<context:component-scan base-package="nosi.ak.shoppingbackend.daoimpl"/>
+	<context:component-scan base-package="nosi.ak.shoppingbackend"/>
 	
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -30,7 +30,10 @@
 	<mvc:annotation-driven/>
 	
 	<mvc:resources location="/assets/" mapping="/resources/**" />
-
+	
+	
+	
+	
 </beans>
 
 
