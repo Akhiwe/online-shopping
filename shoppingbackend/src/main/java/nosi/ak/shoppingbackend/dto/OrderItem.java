@@ -33,13 +33,13 @@ public class OrderItem implements Serializable {
 	
 	@ManyToOne
 	@JoinColumn(name = "order_id")
-	private OrderDetails orderDetail;
+	private OrderDetail orderDetail;
 
-	public OrderDetails getOrderDetail() {
+	public OrderDetail getOrderDetail() {
 		return orderDetail;
 	}
 
-	public void setOrderDetail(OrderDetails orderDetail) {
+	public void setOrderDetail(OrderDetail orderDetail) {
 		this.orderDetail = orderDetail;
 	}
 

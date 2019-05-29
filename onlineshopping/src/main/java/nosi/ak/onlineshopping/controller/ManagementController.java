@@ -19,7 +19,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import ch.qos.logback.core.util.FileUtil;
+import nosi.ak.onlineshopping.Validator.ProductValidator;
+import nosi.ak.onlineshopping.util.FileUtil;
+//import ch.qos.logback.core.util.FileUtil;
 import nosi.ak.shoppingbackend.dao.CategoryDAO;
 import nosi.ak.shoppingbackend.dao.ProductDAO;
 import nosi.ak.shoppingbackend.dto.Category;
@@ -148,7 +150,7 @@ public class ManagementController {
 		return categoryDAO.list();
 	}
 	
-	@ModelAttribute("category") [=-]
+	@ModelAttribute("category") 
 			
 	public Category modelCategory() {
 		return new Category();

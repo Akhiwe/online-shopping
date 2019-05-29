@@ -2,20 +2,22 @@ package nosi.ak.shoppingbackend.dao;
 
 import java.util.List;
 
+import nosi.ak.shoppingbackend.dto.Product;
+
 public interface ProductDAO {
 
-	ProductDAO get(int productId);
-	List<ProductDAO> list();	
-	boolean add(ProductDAO product);
-	boolean update(ProductDAO product);
-	boolean delete(ProductDAO product);
+	Product get(int productId);
+	List<Product> list();	
+	boolean add(Product product);
+	boolean update(Product product);
+	boolean delete(Product product);
 
-	List<ProductDAO> getProductsByParam(String param, int count);	
+	List<Product> getProductsByParam(String param, int count);	
 	
 	
 	// business methods
-	List<ProductDAO> listActiveProducts();	
-	List<ProductDAO> listActiveProductsByCategory(int categoryId);
-	List<ProductDAO> getLatestActiveProducts(int count);
+	List<Product> listActiveProducts();	
+	List<Product> listActiveProductsByCategory(int categoryId);
+	List<Product> getLatestActiveProducts(int count);
 	
 }

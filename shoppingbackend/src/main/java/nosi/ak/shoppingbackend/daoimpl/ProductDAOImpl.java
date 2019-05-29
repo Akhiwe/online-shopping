@@ -13,7 +13,7 @@ import nosi.ak.shoppingbackend.dto.Product;
 
 @Repository("productDAO")
 @Transactional
-public abstract class ProductDAOImpl implements ProductDAO {
+public class ProductDAOImpl implements ProductDAO {
 
 	@Autowired
 	private SessionFactory sessionFactory;
@@ -41,10 +41,16 @@ public abstract class ProductDAOImpl implements ProductDAO {
 	
 	@Override
 	public List<Product> list() {
-		return sessionFactory
-				.getCurrentSession()
-					.createQuery("FROM Product" , Product.class)
-						.getResultList();
+		try {
+			return sessionFactory
+					.getCurrentSession()
+						.createQuery("FROM Product" , Product.class)
+							.getResultList();
+		}catch(Exception e) {
+			return null;
+		}
+		
+		
 	}
 
 	/*
@@ -145,5 +151,7 @@ public abstract class ProductDAOImpl implements ProductDAO {
 					
 		
 	}
+
+
 
 }

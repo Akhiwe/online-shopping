@@ -2,8 +2,9 @@ package nosi.ak.shoppingbackend.dao;
 
 
 
+import java.util.List;
+
 import nosi.ak.shoppingbackend.dto.Address;
-import nosi.ak.shoppingbackend.dto.Cart;
 import nosi.ak.shoppingbackend.dto.User;
 
 public interface UserDAO {
